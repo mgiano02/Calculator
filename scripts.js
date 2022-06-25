@@ -1,33 +1,33 @@
 const add = (x,y) => {
-    console.log(x + y);
+    outputDisplay.innerText = (x + y);
 }
 
 const subtract = (x, y) => {
-    console.log(x - y);
+    outputDisplay.innerText = (x - y);
 }
 
 const multiply = (x,y) => {
-    console.log(x * y);
+    outputDisplay.innerText = (x * y);
 }
 
 const divide = (x,y) => {
-    console.log(x / y);
+    outputDisplay.innerText = (x / y);
 }
 
 const operatorNums = [];
 
 // Calls one of the above functions using the given numbers based on the operator
 function operate (operator,num1,num2) {
-    if (operator === add) {
+    if (operator === 'add') {
         return add(num1, num2)
     }
-    if (operator === subtract) {
+    if (operator === 'subtract') {
         return subtract(num1, num2)
     }
-    if (operator === multiply) {
+    if (operator === 'multiply') {
         return multiply(num1, num2)
     }
-    if (operator === divide) {
+    if (operator === 'divide') {
         return divide(num1, num2)
     }
 }
@@ -139,30 +139,38 @@ buttonC.addEventListener('click', function() {
     buttonMultiply.classList.remove('buttonOperator');
     buttonSubtract.classList.remove('buttonOperator');
     buttonAdd.classList.remove('buttonOperator');
+    operatorNums.pop();
+    operatorNums.pop();
+    operatorNums.pop();
 })
 buttonDivide.addEventListener('click', function() {
     operatorNums.push(parseInt(outputDisplay.innerText));
     outputDisplay.innerText = ' ';
     buttonDivide.classList.add('buttonOperator');
+    operatorNums.push('divide');
 })
 buttonMultiply.addEventListener('click', function() {
     operatorNums.push(parseInt(outputDisplay.innerText));
     outputDisplay.innerText = ' ';
     buttonMultiply.classList.add('buttonOperator');
+    operatorNums.push('multiply');
 })
 buttonSubtract.addEventListener('click', function() {
     operatorNums.push(parseInt(outputDisplay.innerText));
     outputDisplay.innerText = ' ';
     buttonSubtract.classList.add('buttonOperator');
+    operatorNums.push('subtract');
 })
 buttonAdd.addEventListener('click', function() {
     operatorNums.push(parseInt(outputDisplay.innerText));
     outputDisplay.innerText = ' ';
     buttonAdd.classList.add('buttonOperator');
+    operatorNums.push('add');
 })
 buttonEquals.addEventListener('click', function() {
     operatorNums.push(parseInt(outputDisplay.innerText));
     outputDisplay.innerText = '';
+    operate(operatorNums[1], operatorNums[0], operatorNums[2]);
 })
 
 // const firstNum = () => {
@@ -181,4 +189,12 @@ buttonEquals.addEventListener('click', function() {
 // Apply operator sign to display*
 // Store second numeric value*
 // Apply second number to the display*
-// Next step: Equal sign implimentation
+
+// When Equal sign is clicked:
+// Store second numeric value*
+// Delete number from display*
+// Initiate operate function with 2 numeric values and operator*
+// Display result of operate function on display*
+// Delete stored values (on hold)
+// Store result number as first value (on hold)
+
