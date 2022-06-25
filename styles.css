@@ -50,3 +50,7 @@
     width: 75px;
     font-weight: bolder;
 }
+
+.buttonOperator {
+    background-color: crimson;
+}

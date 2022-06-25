@@ -14,6 +14,7 @@ const divide = (x,y) => {
     console.log(x / y);
 }
 
+const operatorNums = [];
 
 // Calls one of the above functions using the given numbers based on the operator
 function operate (operator,num1,num2) {
@@ -57,52 +58,127 @@ const buttonEquals = document.querySelector('#buttonEquals');
 // Can create a function to combine all event listeners into one piece of code
 button0.addEventListener('click', function() {
     outputDisplay.innerText += 0;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button1.addEventListener('click', function() {
     outputDisplay.innerText += 1;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button2.addEventListener('click', function() {
     outputDisplay.innerText += 2;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button3.addEventListener('click', function() {
     outputDisplay.innerText += 3;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button4.addEventListener('click', function() {
     outputDisplay.innerText += 4;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button5.addEventListener('click', function() {
     outputDisplay.innerText += 5;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button6.addEventListener('click', function() {
     outputDisplay.innerText += 6;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button7.addEventListener('click', function() {
     outputDisplay.innerText += 7;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button8.addEventListener('click', function() {
     outputDisplay.innerText += 8;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 button9.addEventListener('click', function() {
     outputDisplay.innerText += 9;
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 buttonDec.addEventListener('click', function() {
     outputDisplay.innerText += '.';
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 buttonC.addEventListener('click', function() {
     outputDisplay.innerText = '';
+    buttonDivide.classList.remove('buttonOperator');
+    buttonMultiply.classList.remove('buttonOperator');
+    buttonSubtract.classList.remove('buttonOperator');
+    buttonAdd.classList.remove('buttonOperator');
 })
 buttonDivide.addEventListener('click', function() {
-    outputDisplay.innerText += '÷';
+    operatorNums.push(parseInt(outputDisplay.innerText));
+    outputDisplay.innerText = ' ';
+    buttonDivide.classList.add('buttonOperator');
 })
 buttonMultiply.addEventListener('click', function() {
-    outputDisplay.innerText += '×';
+    operatorNums.push(parseInt(outputDisplay.innerText));
+    outputDisplay.innerText = ' ';
+    buttonMultiply.classList.add('buttonOperator');
 })
 buttonSubtract.addEventListener('click', function() {
-    outputDisplay.innerText += '−';
+    operatorNums.push(parseInt(outputDisplay.innerText));
+    outputDisplay.innerText = ' ';
+    buttonSubtract.classList.add('buttonOperator');
 })
 buttonAdd.addEventListener('click', function() {
-    outputDisplay.innerText += '+';
+    operatorNums.push(parseInt(outputDisplay.innerText));
+    outputDisplay.innerText = ' ';
+    buttonAdd.classList.add('buttonOperator');
 })
-// buttonEquals.addEventListener('click', function() {
-//     outputDisplay.innerText = '';
-// })
+buttonEquals.addEventListener('click', function() {
+    operatorNums.push(parseInt(outputDisplay.innerText));
+    outputDisplay.innerText = '';
+})
+
+// const firstNum = () => {
+//     if (outputDisplay == '÷') {
+//         console.log('yo!')
+//     }
+// }
+
+// const firstNum = operatorNums[0];
+
+// const secondNum = operatorNums[1];
+
+// When operator is clicked:
+// Store numeric value*
+// Delete number from display*
+// Apply operator sign to display*
+// Store second numeric value*
+// Apply second number to the display*
+// Next step: Equal sign implimentation
