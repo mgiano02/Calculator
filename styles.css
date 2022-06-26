@@ -31,6 +31,14 @@
     font-size:x-large;
 }
 
+.bigBtn {
+    border-right: 0px;
+}
+
+#bigBtn {
+    border-left: 0px;
+}
+
 #btnCol1 {
     width: 75px;
     font-weight: bolder;
